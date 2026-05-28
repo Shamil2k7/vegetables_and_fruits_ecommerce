@@ -1,0 +1,135 @@
+:root {
+  --form-green: #7fad39;
+  --form-dark: #1c1c1c;
+  --form-gray: #6f6f6f;
+  --form-border: #e1e1e1;
+  --form-bg: #ffffff;
+}
+
+.email-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Cairo', sans-serif;
+  box-sizing: border-box;
+}
+
+.email-form-card {
+  background-color: var(--form-bg);
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.email-form-header {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.email-form-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--form-dark);
+  margin: 0 0 6px 0;
+}
+
+.email-form-header p {
+  font-size: 14px;
+  color: var(--form-gray);
+  margin: 0;
+}
+
+/* Success notification toast banner */
+.success-banner {
+  background-color: #f4f9ec;
+  color: var(--form-green);
+  border: 1px solid rgba(127, 173, 57, 0.2);
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Form inputs configuration layout */
+.standard-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.email-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.email-field-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--form-dark);
+}
+
+.email-field-group input,
+.email-field-group textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--form-border);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--form-dark);
+  outline: none;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.email-field-group input:focus,
+.email-field-group textarea:focus {
+  border-color: var(--form-green);
+  background-color: var(--form-bg);
+  box-shadow: 0 0 0 3px rgba(127, 173, 57, 0.1);
+}
+
+.email-field-group textarea {
+  resize: vertical;
+}
+
+.email-submit-btn {
+  background-color: var(--form-green);
+  color: var(--form-bg);
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(127, 173, 57, 0.15);
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.email-submit-btn:hover {
+  background-color: #6e9a30;
+}
+
+/* Animation pop */
+.animate-pop {
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Small devices responsive rule overrides */
+@media (max-width: 480px) {
+  .email-form-card {
+    padding: 30px 20px;
+  }
+}

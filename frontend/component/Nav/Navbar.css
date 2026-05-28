@@ -1,0 +1,198 @@
+
+
+/* --- NAVBAR BASE STRUCTURE --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 4%;
+  background-color: var(--white);
+  position: relative;
+  z-index: 100;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Brand Identity & Logo styling */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+.logo-svg {
+  width: 38px;
+  height: 38px;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+.logo-subtitle {
+  font-size: 9px;
+  color: var(--primary-green);
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  margin-top: 2px;
+}
+
+/* Nav Menu Links Desktop Settings */
+.nav-menu {
+  display: flex;
+  gap: 35px;
+}
+.nav-item {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+.nav-item:hover, .nav-item.active {
+  color: var(--primary-green);
+}
+
+/* Action Utilities Icons Layout */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.action-btn {
+  background: var(--bg-circle-gray);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.action-btn:hover {
+  background: #e8e8e8;
+  transform: translateY(-1px);
+}
+.cart-btn {
+  background: var(--primary-green);
+  color: var(--white);
+}
+.cart-btn:hover {
+  background: #6e9a30;
+}
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--text-dark);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--white);
+}
+
+/* Navigation Drawer Hamburger Switcher Button */
+.mobile-toggle-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+  padding: 0;
+  margin-left: 8px;
+}
+.mobile-toggle-btn .bar {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- MOBILE BREAKPOINT RESPONSIVENESS (768px and down) --- */
+@media (max-width: 768px) {
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  /* Morphing hamburger lines into 'X' shape close indicator */
+  .mobile-toggle-btn .bar.open:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .mobile-toggle-btn .bar.open:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  .mobile-toggle-btn .bar.open:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Slide Out Sidebar Navigation Panel Overlay Drawer */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 280px;
+    background-color: var(--white);
+    flex-direction: column;
+    padding: 90px 40px;
+    gap: 25px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 99;
+  }
+  .nav-menu.active {
+    right: 0;
+  }
+  .nav-item {
+    font-size: 18px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+  }
+
+  /* Blurred Background Veil Backdrop */
+  .menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 98;
+  }
+}
+
+/* Tiny Screens Optimization */
+@media (max-width: 480px) {
+  /* Hides secondary action buttons to prevent layout squishing */
+  .search-btn, .heart-btn {
+    display: none;
+  }
+  .navbar {
+    padding: 15px 16px;
+  }
+}

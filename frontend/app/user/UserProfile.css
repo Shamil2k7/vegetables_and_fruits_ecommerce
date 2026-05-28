@@ -1,0 +1,527 @@
+/* --- CSS Styling Variables --- */
+:root {
+  --org-green: #7fad39;
+  --org-dark: #1c1c1c;
+  --org-gray: #6f6f6f;
+  --org-light: #f5f5f5;
+  --border-color: #eaeaea;
+  --white: #ffffff;
+}
+
+.profile-page-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 4%;
+  gap: 40px;
+  font-family: 'Cairo', sans-serif;
+  box-sizing: border-box;
+}
+
+/* --- SIDEBAR PANEL STYLING --- */
+.profile-sidebar {
+  flex: 1;
+  max-width: 280px;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  height: fit-content;
+}
+
+.user-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+  border: black 1px solid;
+  color: #e7efff;
+  border-radius: 100%;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 12px;
+}
+
+.user-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--org-green);
+}
+
+.edit-avatar-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--org-dark);
+  color: var(--white);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-display-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--org-dark);
+  margin: 0 0 4px 0;
+}
+
+.user-membership-tag {
+  background-color: #fef5e6;
+  color: #f39c12;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 12px;
+}
+
+/* Navigation Drawer menu options */
+.sidebar-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--org-gray);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav-item:hover, .sidebar-nav-item.active {
+  background-color: #f4f9ec;
+  color: var(--org-green);
+}
+
+.nav-icon {
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.order-count-badge {
+  margin-left: auto;
+  background-color: var(--org-green);
+  color: var(--white);
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 15px 0;
+}
+
+.logout-btn:hover {
+  background-color: #fff0f0;
+  color: #d9534f;
+}
+
+/* --- MAIN CONTENTS SECTION PANEL --- */
+.profile-main-content {
+  flex: 3;
+  background: var(--white);
+}
+
+.content-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--org-dark);
+  margin: 0 0 6px 0;
+}
+
+.content-subtitle {
+  font-size: 15px;
+  color: var(--org-gray);
+  margin: 0 0 35px 0;
+}
+
+/* Dashboard Dashboard Grid Metrics Cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.metric-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 15px;
+}
+
+.card-green { background-color: #f3f9ec; }
+.card-orange { background-color: #fef7ec; }
+.card-blue { background-color: #eef7fa; }
+
+.metric-icon {
+  font-size: 30px;
+}
+
+.metric-data h3 {
+  font-size: 13px;
+  color: var(--org-gray);
+  margin: 0 0 2px 0;
+  font-weight: 700;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--org-dark);
+  margin: 0;
+}
+
+/* Recent Activity Logs layout section */
+.section-block-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--org-dark);
+  margin-bottom: 20px;
+}
+
+.activity-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.activity-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dddddd;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.activity-dot.current {
+  background-color: var(--org-green);
+  box-shadow: 0 0 0 4px rgba(127, 173, 57, 0.2);
+}
+
+.activity-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-text {
+  font-size: 14px;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: var(--org-gray);
+}
+
+/* --- EDITABLE PREFERENCE PROFILE FORM --- */
+.profile-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--org-dark);
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--org-dark);
+  outline: none;
+  background-color: #fafafa;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--org-green);
+  background-color: var(--white);
+}
+
+.save-settings-btn {
+  background-color: var(--org-green);
+  color: var(--white);
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(127, 173, 57, 0.15);
+  transition: background-color 0.2s;
+}
+
+.save-settings-btn:hover {
+  background-color: #6e9a30;
+}
+
+/* Fallback state configurations */
+.fallback-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+.empty-icon { font-size: 50px; display: block; margin-bottom: 15px;}
+
+/* CSS Animations entry points */
+.animate-fade {
+  animation: fadeIn 0.4s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE MEDIA BREAKPOINTS --- */
+@media (max-width: 900px) {
+  .profile-page-container {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  .profile-sidebar {
+    max-width: 100%;
+    width: 100%;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .save-settings-btn {
+    align-self: fill;
+    width: 100%;
+  }
+}
+.profile-edit-form {
+
+  width: 100%;
+
+  max-width: 700px;
+
+  margin-top: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  background: #ffffff;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 4px 20px
+    rgba(0, 0, 0, 0.08);
+
+}
+
+.profile-edit-form input {
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #dcdcdc;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+
+  background: #fafafa;
+
+}
+
+.profile-edit-form input:focus {
+
+  border-color: #16a34a;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(22, 163, 74, 0.1);
+
+}
+
+.profile-edit-form button {
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #16a34a;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.profile-edit-form button:hover {
+
+  background: #15803d;
+
+  transform: translateY(-2px);
+
+}
+
+.profile-edit-form button:active {
+
+  transform: scale(0.98);
+
+}
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.order-card {
+
+  background: #ffffff;
+
+  padding: 20px;
+
+  margin-top: 20px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+}
+
+.order-card h3 {
+
+  font-size: 18px;
+
+  color: #111827;
+
+}
+
+.order-card p {
+
+  color: #4b5563;
+
+  font-size: 15px;
+
+}
+
+.order-card button {
+
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #dc2626;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+.order-card button:hover {
+
+  background: #b91c1c;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .profile-edit-form {
+
+    padding: 20px;
+
+  }
+
+}

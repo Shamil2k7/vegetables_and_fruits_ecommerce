@@ -1,0 +1,146 @@
+:root {
+  --auth-green: #7fad39;
+  --auth-dark: #1c1c1c;
+  --auth-gray: #6f6f6f;
+  --auth-border: #eaeaea;
+  --auth-bg: #f8f9fa;
+  --auth-card-bg: #ffffff;
+}
+
+.auth-container {
+  min-height: calc(100vh - 120px); /* Centers form between layout navbar/footer frames */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--auth-bg);
+  padding: 20px;
+  font-family: inherit;
+}
+
+.auth-card {
+  background-color: var(--auth-card-bg);
+  border: 1px solid var(--auth-border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--auth-dark);
+  margin: 0 0 8px 0;
+}
+
+.auth-header p {
+  font-size: 14px;
+  color: var(--auth-gray);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-field-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--auth-dark);
+}
+
+.auth-field-group input {
+  padding: 12px 16px;
+  border: 1px solid var(--auth-border);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fcfcfc;
+  transition: all 0.2s ease;
+}
+
+.auth-field-group input:focus {
+  border-color: var(--auth-green);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(127, 173, 57, 0.1);
+}
+
+.auth-error {
+  color: #e74c3c;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.auth-btn {
+  background-color: var(--auth-green);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.auth-btn:hover {
+  background-color: #6e9a30;
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--auth-border);
+  font-size: 14px;
+  color: var(--auth-gray);
+}
+
+.auth-footer a {
+  color: var(--auth-green);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Base View Animation fade rules */
+.animate-fade {
+  animation: authFadeIn 0.4s ease-out;
+}
+
+@keyframes authFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 20px;
+  }
+}

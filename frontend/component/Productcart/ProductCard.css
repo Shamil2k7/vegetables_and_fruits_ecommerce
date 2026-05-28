@@ -1,0 +1,115 @@
+.product-card {
+  background: #ffffff;
+  border: 2px solid #7fad39; /* Noticeable clean green outer framework line */
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(127, 173, 57, 0.15);
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.product-img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+/* Badges Setup */
+.card-category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #f3f9ec;
+  color: #7fad39;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.card-discount-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #dd4b39;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* Detailed Content Info Elements */
+.card-info {
+  padding-top: 16px;
+  text-align: left;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.stars-container {
+  color: #dddddd; /* Default empty star tone color */
+  font-size: 14px;
+}
+
+.star.filled {
+  color: #f39c12; /* Golden orange rating fill active */
+}
+
+.rating-text {
+  font-size: 12px;
+  color: #999999;
+  font-weight: 600;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #252525;
+  margin: 0 0 10px 0;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.current-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #7fad39;
+}
+.product-card{
+  cursor:pointer;
+}
+.old-price {
+  font-size: 14px;
+  color: #cccccc;
+  text-decoration: line-through;
+  font-weight: 600;
+}
