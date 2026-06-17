@@ -16,10 +16,16 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 /* ================= MONGODB CONNECTION ================= */
 
-mongoose
-  .connect("mongodb://localhost:27017/Fresh")
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+  mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("MongoDB Connected");
+
+    app.listen(5000, () => {
+      console.log("Server Running on Port 5000");
+    });
+  })
+  .catch(console.error);;
 
 /* ================= API ROUTES ================= */
 
